@@ -17,7 +17,7 @@ class NoAccoutText extends StatelessWidget {
         Text("Não possui uma conta? ", 
         style: TextStyle(fontSize: getProportionateScreenWidth(16)),),
         GestureDetector(
-        onTap: () => Navigator.popAndPushNamed(context, ForgotPasswordScreen.routeName),  
+        onTap: () => {},  
         child: Text("Cadastre-se", 
         style: TextStyle(fontSize: getProportionateScreenWidth(16), color: kPrimaryColor),)),
       ],

@@ -3,6 +3,8 @@ import 'package:shop_ecommerce/components/custom_suffix_icon.dart';
 import 'package:shop_ecommerce/components/default_button.dart';
 import 'package:shop_ecommerce/components/form_error.dart';
 import 'package:shop_ecommerce/constants.dart';
+import 'package:shop_ecommerce/screens/forgot_password/forg_password_screen.dart';
+import 'package:shop_ecommerce/screens/login_success/login_success_screen.dart';
 import 'package:shop_ecommerce/size_config.dart';
 
 class SignInForm extends StatefulWidget {
@@ -44,9 +46,12 @@ class _SignInFormState extends State<SignInForm> {
               }),
               Text("Permanecer conectado"),
               Spacer(),
-              Text("Esqueceu sua senha?", style: TextStyle(
-                decoration: TextDecoration.underline
-              ),)
+              GestureDetector(
+                onTap: () => {Navigator.pushNamed(context, ForgotPasswordScreen.routeName)},
+                child: Text("Esqueceu sua senha?", style: TextStyle(
+                  decoration: TextDecoration.underline
+                ),),
+              )
             ],
           ),
           SizedBox(height: getProportionateScreenHeight(20)),
@@ -55,6 +60,7 @@ class _SignInFormState extends State<SignInForm> {
             if(_formKey.currentState!.validate()){
               _formKey.currentState!.save();
             }
+            Navigator.pushNamed(context, LoginSuccessScreen.routeName);
           })
         ],
       )
@@ -74,7 +80,7 @@ class _SignInFormState extends State<SignInForm> {
               });
             } else if(value.length < 8 && !errors.contains(kShortPassError)){
               setState(() {
-                errors.add(kInvalidEmailError);
+                errors.add(kInvalidEmailError);;
               });
             }
 
@@ -112,7 +118,6 @@ class _SignInFormState extends State<SignInForm> {
             hintText: "Informe sua senha",
             floatingLabelBehavior: FloatingLabelBehavior.always,
             suffixIcon: CustomSuffixIcon(svgIcon: "assets/icons/Lock.svg",)
-            //TODO 21:30
           ),
         );
   }

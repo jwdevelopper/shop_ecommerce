@@ -13,7 +13,6 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-  //TODO 6:47
   int currentPage = 0;
   List<Map<String, String>> splashData = [
     {
