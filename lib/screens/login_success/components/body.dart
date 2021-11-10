@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_ecommerce/components/default_button.dart';
+import 'package:shop_ecommerce/screens/home/home_screen.dart';
 import 'package:shop_ecommerce/size_config.dart';
 
 class Body extends StatelessWidget {
@@ -31,7 +32,7 @@ class Body extends StatelessWidget {
             width: SizeConfig.screenWidth * 0.6,
             child: DefaultButton(
               text: "Voltar ao inicio",
-              press: (){}
+              press: () => Navigator.pushNamed(context, HomeScreen.routeName)
             ),
           ),
           Spacer(),

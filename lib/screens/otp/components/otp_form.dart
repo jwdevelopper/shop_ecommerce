@@ -3,60 +3,6 @@ import 'package:shop_ecommerce/components/default_button.dart';
 import 'package:shop_ecommerce/constants.dart';
 import 'package:shop_ecommerce/size_config.dart';
 
-class Body extends StatelessWidget {
-  const Body({ Key? key }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: SizedBox(
-        width: double.infinity,
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-          child: Column(
-            children: [
-              SizedBox(height: SizeConfig.screenHeight * 0.05,),
-              Text("Verificação OTP", style: headingStyle,),
-              Text("Nós enviaremos seu código para +55 (62) 93965-****"),
-              buildTimer(),
-              SizedBox(height: SizeConfig.screenHeight * 0.15,),
-              OtpForm(),
-              SizedBox(height: SizeConfig.screenHeight * 0.1,),
-              GestureDetector(
-                onTap: (){},
-                child: Text(
-                  "Reenviar codigo OTP", 
-                  style: TextStyle(
-                    decoration: TextDecoration.underline
-                  ),
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Row buildTimer() {
-    return Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("Seu código expira em "),
-            TweenAnimationBuilder(
-              tween: Tween(begin: 30.0, end: 0), 
-              duration: Duration(seconds: 30), 
-              builder: (context,value, child) {
-                double valor = double.parse(value.toString());
-                return Text("00:${valor.toInt()}", style: TextStyle(color: kPrimaryColor),);
-              } 
-            )
-          ],
-        );
-  }
-
-}
-
 class OtpForm extends StatefulWidget {
   const OtpForm({ Key? key }) : super(key: key);
 
