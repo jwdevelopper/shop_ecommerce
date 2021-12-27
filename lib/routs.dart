@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:shop_ecommerce/screens/complete_profile/complete_profile_screen.dart';
+import 'package:shop_ecommerce/screens/details/details_screen.dart';
 import 'package:shop_ecommerce/screens/forgot_password/forg_password_screen.dart';
 import 'package:shop_ecommerce/screens/home/home_screen.dart';
 import 'package:shop_ecommerce/screens/login_success/login_success_screen.dart';
@@ -17,5 +18,6 @@ final Map<String, WidgetBuilder> routes = {
   SignUpScreen.routeName: (context) => SignUpScreen(),
   CompleteProfileScreen.routeName: (context) => CompleteProfileScreen(),
   OtpScreen.routeName: (context) => OtpScreen(),
-  HomeScreen.routeName: (context) => HomeScreen()
+  HomeScreen.routeName: (context) => HomeScreen(),
+  DetailsScreen.routeName: (context) => DetailsScreen()
 };
